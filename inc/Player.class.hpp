@@ -1,0 +1,28 @@
+/*=============================================================================
+ * Project: Rush00 - Middle Out
+ *
+ * Program: Create a game with n-cursus
+ *
+ * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
+ * ==========================================================================*/
+
+#ifndef PLAYER_HPP
+# define PLAYER_HPP
+
+class Player : public GameEntity 
+{
+public:
+	//methods
+
+	//operator overloads
+	Player & operator=(Player const & rhs); //Canonical
+
+	Player(std::string name); //Canonical
+	Player(Player const & src); //canonical
+	Player(void); //Canonical
+	~Player(void); //Canonical
+private:
+	void _initValue(void);
+}
+
+#endif
