@@ -9,7 +9,7 @@ class GameEntity
 public:
 
   GameEntity(void);
-  GameEntity(std::string name);
+  // GameEntity);
   GameEntity(GameEntity &src);
   ~GameEntity(void);
   void move(void);

@@ -12,17 +12,17 @@ GameEntity::GameEntity(void)
   this->_isAlive = true;
 }
 
-GameEntity::GameEntity(std::string name)
-{
-  this->_x = 0;
-  this->_y = 0;
-  this->_speed = 1;
-  this->_dirx = 1;
-  this->_diry = 1;  
-  this->_symbol = '#';
-  this->_lives = 1;
-  this->_isAlive = true;
-}
+// GameEntity::GameEntity(std::string name)
+// {
+//   this->_x = 0;
+//   this->_y = 0;
+//   this->_speed = 1;
+//   this->_dirx = 1;
+//   this->_diry = 1;  
+//   this->_symbol = '#';
+//   this->_lives = 1;
+//   this->_isAlive = true;
+// }
 
 GameEntity::GameEntity(GameEntity &src)
 {
