@@ -1,8 +1,8 @@
-include "game.hpp"
+#include "Game.hpp"
 
 int main(void)
 {
-  game Ebachman;
-  EBachman.launch;
+  Game Ebachman;
+  Ebachman.launch();
   return (0);
 }
