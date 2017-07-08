@@ -4,6 +4,9 @@
 int score, maxY, maxX;
 Game::Game()
 {
+  score = 0;
+  maxX = 0;
+  maxY = 0;
 };
 
 Game::Game(const Game &other)
@@ -30,6 +33,8 @@ void Game::launch()
   cbreak();
   noecho();
   keypad(stdscr, TRUE);
+  getmaxyx(stdscr, maxY, maxX);
+  printw("window size id %d tall and %d wide", maxY, maxX);
   play();
   endwin();
 };
