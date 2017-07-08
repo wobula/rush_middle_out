@@ -2,7 +2,7 @@ include "game.hpp"
 
 int main(void)
 {
-  game Ebachman;
+  game EBachman;
   EBachman.launch;
   return (0);
 }
