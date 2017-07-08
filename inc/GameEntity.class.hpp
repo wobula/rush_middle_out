@@ -23,7 +23,7 @@ protected:
   int _diry;
   int _speed;
   char _symbol;
-  int _hp;
+  int _lives;
   bool _isAlive;
   
 };
