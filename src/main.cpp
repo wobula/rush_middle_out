@@ -2,7 +2,7 @@
 
 int main(void)
 {
-  game Ebachman;
-  Ebachman.launch;
+  Game Ebachman;
+  Ebachman.launch();
   return (0);
 }
