@@ -16,9 +16,8 @@ CXX			=	g++
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 SRC_DIR		=	src
-SRC_FILE	=	main.cpp \
+SRC_FILE	=	main.cpp GameEntity.class.cpp \
 				SampleItem.class.cpp \
-				Enemy.class.cpp \
 
 SRCS		=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
 
