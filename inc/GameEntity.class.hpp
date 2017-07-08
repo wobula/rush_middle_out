@@ -1,5 +1,5 @@
-#ifndef GAMEENTITY_HPP
-# define GAMEENTITY_HPP
+#ifndef GAMEENTITY_CLASS_HPP
+# define GAMEENTITY_CLASS_HPP
 # include <ncurses.h>
 # include <string>
 # include <iostream>
@@ -9,11 +9,12 @@ class GameEntity
 public:
 
   GameEntity(void);
-  GameEntity(std::string name);
+  // GameEntity);
   GameEntity(GameEntity &src);
   ~GameEntity(void);
   void move(void);
-  
+  void drawToWindow(int x, int y) const;
+  void getAlive(void) const;
   
 protected:
   
@@ -23,7 +24,7 @@ protected:
   int _diry;
   int _speed;
   char _symbol;
-  int _hp;
+  int _lives;
   bool _isAlive;
   
 };
