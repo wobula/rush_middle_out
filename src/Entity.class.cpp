@@ -6,7 +6,7 @@
 /*   By: dubious </var/mail/dubious>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 20:04:52 by dubious           #+#    #+#             */
-/*   Updated: 2017/07/09 00:44:03 by dubious          ###   ########.fr       */
+/*   Updated: 2017/07/09 01:18:23 by dubious          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ void			Entity::die(void)
 
 void			Entity::act(World &w)
 {
+		Entity	*e;
+
+		if (this->_isAlive)
+		{
+				// do shit
+				e = this->getUp(w);
+				if (e)
+				{
+						this.die();
+						e.die();
+				}
+				else
+						this.moveUp(w);
+		}
+		else
+				;// don't do shit
 		(void)w;
 		return;
 }
