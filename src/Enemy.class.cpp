@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Enemy.class.hpp"
+#include "Player.class.hpp"
 
 Enemy::Enemy(void) {
 	this->_initValue(void);
@@ -17,7 +18,7 @@ Enemy::Enemy(std::string name) {
 
 Enemy::Enemy(Enemy const &old) {
 	std::srand(std::time(NULL));
-	*this = src;
+	*this = old;
 	std::cout << "Enemy " << this->_name
 		<< " has been created!" << std::endl;
 	return;
@@ -49,30 +50,31 @@ std::ostream	&operator<<(std::ostream &o, Enemy const &c)
 
 // METHODS //
 
-void Enemy::shoot(std::string gun)
+// void Enemy::shoot(std::string gun)
+// {
+// 	std::cout << "Shooting with " << gun << std::endl;
+// 	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
+// }
+
+
+
+bool Enemy::move(void)
 {
-	std::cout << "Shooting with " << gun << std::endl;
-	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
-}
-
-
-
-bool Enemy::move(int x, int y)
-{
-	if (this->_posX + 1 == Game::maxX)
+	if (this->_posX + this->_dirX == Game::maxX || this->_posX + this->_dirX == 0)
 	{
 		this->_dirX *= -1;
 		this->_dirY = 1;
 	}
-	this->_posX = this->_posX + this->_dirX;
-	this->posY = this->posY + this->dirY;
-	this->_dirX
+	else
+	  this->_dirY = 0;
+	this->_posX +=  this->_dirX;
+	this->_posY +=  this->_dirY;
 	return (true);
 }
 
-bool checkCollisionObject(char c)
+bool Enemy::checkCollisionObject(char c)
 {
-	if (c == Enemy::_symbol)
+  if (c == '&' || c == '|') //change second to Bullet::_symbol
 	{
 		this->_lives--;
 		std::cout << "Enemy hit!" << std::endl;
@@ -81,22 +83,21 @@ bool checkCollisionObject(char c)
 	return false;
 }
 
+void Enemy::doAction(void)
+{
+  this->move();
+  this->checkCollision();
+  
+}
+
 bool Enemy::checkCollision(void)
 {
-	char d;
-	if (this->move() == 0)
-	{
-		if (mvscanw(this->_posY + 1, this->posX, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
-		if (mvscanw(this->_posY, this->posX + 1, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
-		if (mvscanw(this->_posY, this->posX - 1, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
-	}
+	char c;
+	bool hit = false;
 
+	mvscanw(this->_posY, this->_posX, "%c", c);
+	hit = this->checkCollisionObject(c);
+	return (hit);
 }
 
 //INIT
@@ -110,6 +111,6 @@ void Enemy::_initValue(void)
 	this->_dirY = 0;
 	this->_speed = 1;
 	this->_symbol = 'X';
-	this->_lives = 3;
+	this->_lives = 1;
 
 }

@@ -18,7 +18,6 @@ public:
 	//methods
 	void shoot(std::string gun);
 	bool move(int x, int y);
-  bool checkCollisionObject(char c);
 
 	//operator overloads
 	Player & operator=(Player const & rhs); //Canonical
@@ -32,18 +31,3 @@ private:
 };
 
 #endif
-
-
-
-// void move(int x, int y)
-
-
-//   this->move(dirx, 0);
-// if at boundary;
-// this->move(0, -1)
-// return;
-
-// take action
-
-// if posx + dirx  == boundarymax || boundary min
-//   this->move( 0, -1);
