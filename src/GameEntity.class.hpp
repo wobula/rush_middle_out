@@ -9,10 +9,9 @@ class AGameEntity
 public:
 
   virtual bool move(int x, int y);
-  bool getAlive(void) const;
+  virtual bool getAlive(void) const;
   virtual void drawToWindow(void) const;
-  
-  
+    
 protected:
   std::string name;
   int _posX;
@@ -23,7 +22,12 @@ protected:
   char _symbol;
   int _lives;
   bool _isAlive;
+  char pos;
+
   
 };
 
 #endif
+
+
+
