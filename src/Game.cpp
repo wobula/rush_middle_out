@@ -45,8 +45,9 @@ void Game::play()
 		timeout(50);
 		while ((ch = getch()) != 'q')
 		{
+			Environment	map;
 				// every X cycles, spawn a new enemy at a random position on the spawn wall.
-				this.spawnEnemies();
+				//this.spawnEnemies();
 
 				// // This Game will have an array of bullets.
 				// // This function just needs to loop through the array and move each bullet once,
@@ -76,7 +77,7 @@ void Game::play()
 
 				if (ch == 'D')
 						debug = true;
-				//if (ch != ERR)
+				if (ch != ERR)
 						addch(ch);
 				refresh();
 				ch = 0;

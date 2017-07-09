@@ -1,6 +1,9 @@
 //#include "GameEntity.class.hpp"
 #ifndef GAME_HPP
 #define GAME_HPP
+
+#include "Environment.hpp"
+
 class Game {
 public:
   //! Default constructor
