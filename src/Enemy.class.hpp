@@ -30,5 +30,3 @@ private:
 // std::ostream	&operator<<(std::ostream &o, Enemy const &c);
 
 #endif
-
-

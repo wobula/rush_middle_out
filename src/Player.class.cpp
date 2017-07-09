@@ -20,19 +20,19 @@ void Player::shoot(std::string gun)
 	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 }
 
-bool Player::mov e(int key)
+bool Player::move(int key)
 {
   int prevX = this->_posX;
   int prevy = this->_posY;
 
-	if (key == KEY_UP)
-		this->_posX = this->_posX + 1;
-	if (key == KEY_DOWN)
-		this->_posX = this->_posX -1;
-	if (key == KEY_LEFT)
-		this->_posY = this->_posY + 1;
-	if (key == KEY_RIGHT)
+	if (key == KEY_UP && this->_posY - 1 > 0)
 		this->_posY = this->_posY - 1;
+	if (key == KEY_DOWN && this->_posY + 1 < Game::maxY)
+		this->_posY = this->_posY +1;
+	if (key == KEY_LEFT && this->_posX - 1 > 0)
+		this->_posX = this->_posX - 1;
+	if (key == KEY_RIGHT && this->_posX + 1 < Game::maxX)
+		this->_posY = this->_posX + 1;
 	if (checkCollision(this->_posX, this->_posY))
 	  return(false);
 	if (prevX == this->_posX && prevy == this->_posY)
@@ -62,7 +62,7 @@ bool Player::checkCollision(int x, int y)
 	char d;
 
 	d = 'S';
-	mvscanw(y, x, "%c", d);
+	mvwscanw(playerwin, y, x, "%c", d);
 	hit = checkCollisionObject(d);
 	return (hit);
 }
@@ -114,7 +114,7 @@ Player::Player(void)
 	std::srand(std::time(NULL));
 	this->_initValue();
 	//std::cout << "Player has been created!" << std::endl;
-	mvwprintw(stdscr, Game::maxX / 2, Game::maxY / 2, "Player has been created!");
+	mvwprintw(playerwin, Game::maxX / 2, Game::maxY / 2, "Player has been created!");
 }
 
 // DECONSTRUCTORS //

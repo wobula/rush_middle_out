@@ -2,6 +2,7 @@
 #include <string>
 #include "Enemy.class.hpp"
 #include "Player.class.hpp"
+#include "Game.hpp"
 
 Enemy::Enemy(void) {
 	this->_initValue();
@@ -97,7 +98,7 @@ bool Enemy::checkCollision(void)
 	char c;
 	bool hit = false;
 
-	mvscanw(this->_posY, this->_posX, "%c", c);
+	mvwscanw(enemy, this->_posY, this->_posX, "%c", c);
 	hit = this->checkCollisionObject(c);
 	return (hit);
 }
