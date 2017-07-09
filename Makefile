@@ -19,8 +19,7 @@ SRC_DIR		=	src
 SRC_FILE	=	main.cpp \
 				GameEntity.class.cpp \
 				Player.class.cpp \
-				Game.cpp \
-				Enemy.class.cpp
+				Game.cpp
 
 
 SRCS		=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
@@ -36,7 +35,7 @@ INC			=	-I src
 all: $(NAME)
 
 $(NAME): $(SRCS) | $(OBJS)
-	    $(CXX) $(INC) $(FLAGS) $(OBJS) -o $(NAME)
+	    $(CXX) $(INC) $(FLAGS) -l ncurses $(OBJS) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	@$(CXX) $(INC) -c $^ $(FLAGS) -o $@

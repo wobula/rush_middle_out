@@ -1,12 +1,13 @@
 #include "Game.hpp"
 #include <ncurses.h>
 
+int Game::score = 0;
+int Game::maxX = 0;
+int Game::maxY = 0;
+bool Game::debug = false;
+
 Game::Game()
 {
-		score = 0;
-		maxX = 0;
-		maxY = 0;
-		debug = false;
 }
 
 Game::Game(const Game &other)
@@ -76,7 +77,7 @@ void Game::play()
 
 				if (ch == 'D')
 						debug = true;
-				if (ch != ERR)
+				//if (ch != ERR)
 						addch(ch);
 				refresh();
 				ch = 0;
@@ -87,5 +88,3 @@ GameEntity		*Game::getEntityAt(int x, int y)
 {
 		return (this->grid[x][y]);
 }
-
- 
