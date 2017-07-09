@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR=""
-INC="inc"
+INC="src"
 SRC="src"
 
 NAME=""
