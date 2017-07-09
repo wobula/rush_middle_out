@@ -43,7 +43,7 @@ void Game::launch()
 void Game::play()
 {
 		int ch = 0;
-		timeout(1000);
+		timeout(100);
 		while ((ch = getch()) != 'q')
 		{
 			Environment	map;
