@@ -22,6 +22,9 @@ void Player::shoot(std::string gun)
 
 bool Player::mov e(int key)
 {
+  int prevX = this->_posX;
+  int prevy = this->_posY;
+
 	if (key == KEY_UP)
 		this->_posX = this->_posX + 1;
 	if (key == KEY_DOWN)
@@ -30,14 +33,19 @@ bool Player::mov e(int key)
 		this->_posY = this->_posY + 1;
 	if (key == KEY_RIGHT)
 		this->_posY = this->_posY - 1;
-	if x == 0 && y == 0
-		return (false);
+	if (checkCollision(this->_posX, this->_posY))
+	  return(false);
+	if (prevX == this->_posX && prevy == this->_posY)
+	  {
+	    if (checkCollision(this->_posX, this->_posY + 1))
+	      return (false);
+	  }
 	return (true);
 }
 
-bool checkCollisionObject(char c)
+bool Player::checkCollisionObject(char c)
 {
-	if (c == Enemy::_symbol)
+	if (c == 'X')
 	{
 		this->_lives--;
 		std::cout << "Player hit!" << std::endl;
@@ -51,15 +59,11 @@ bool checkCollisionObject(char c)
 bool Player::checkCollision(int x, int y)
 {
 	bool hit = false;
-	char *d;
-	if (!this->move(x, y))
-	{
-		if (mvscanw(this->_posY + 1, this->posX, "%c", d))
-			hit = checkCollisionObject(d);
-	}
-	else
-		if (mvscanw(this->_posY + y, this->posX + x, "%c", d))
-			hit = checkCollisionObject(d);
+	char d;
+
+	d = 'S';
+	mvscanw(y, x, "%c", d);
+	hit = checkCollisionObject(d);
 	return (hit);
 }
 
