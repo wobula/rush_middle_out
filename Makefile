@@ -6,7 +6,7 @@
 #    By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/03 15:27:10 by irhett            #+#    #+#              #
-#    Updated: 2017/07/07 23:39:41 by irhett           ###   ########.fr        #
+#    Updated: 2017/07/09 01:13:52 by dubious          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,13 @@ FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 SRC_DIR		=	src
 SRC_FILE	=	main.cpp \
-				GameEntity.class.cpp \
+				World.class.cpp \
 				Player.class.cpp \
-				Game.cpp
+				List.class.cpp \
+				Entity.class.cpp \
+				Enemy.class.cpp \
+				Bullet.class.cpp \
+
 
 
 SRCS		=	$(addprefix $(SRC_DIR)/, $(SRC_FILE))
