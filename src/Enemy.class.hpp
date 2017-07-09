@@ -1,3 +1,10 @@
+/*=============================================================================
+ * Project: Rush00 - Middle Out
+ *
+ * Program: Create a game with n-cursus
+ *
+ * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
+ * ==========================================================================*/
 #ifndef ENEMY_CLASS_HPP
 # define ENEMY_CLASS_HPP
 

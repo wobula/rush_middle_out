@@ -1,4 +1,11 @@
-#include "Environment.hpp"
+/*=============================================================================
+ * Project: Rush00 - Middle Out
+ *
+ * Program: Create a game with n-cursus
+ *
+ * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
+ * ==========================================================================*/
+ #include "Environment.hpp"
 
 static bool colors = TRUE;
 static unsigned char  movement = 0;

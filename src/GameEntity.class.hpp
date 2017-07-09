@@ -1,3 +1,11 @@
+/*=============================================================================
+ * Project: Rush00 - Middle Out
+ *
+ * Program: Create a game with n-cursus
+ *
+ * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
+ * ==========================================================================*/
+ 
 #ifndef GAMEENTITY_CLASS_HPP
 # define GAMEENTITY_CLASS_HPP
 # include <ncurses.h>

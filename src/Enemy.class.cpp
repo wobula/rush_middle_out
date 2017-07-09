@@ -1,3 +1,10 @@
+/*=============================================================================
+ * Project: Rush00 - Middle Out
+ *
+ * Program: Create a game with n-cursus
+ *
+ * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
+ * ==========================================================================*/
 #include <iostream>
 #include <string>
 #include "Enemy.class.hpp"
