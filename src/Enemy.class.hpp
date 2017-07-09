@@ -4,26 +4,24 @@
 # include <iostream>
 # include <string>
 
-class Enemy {
+class Enemy : public AGameEntity 
+{
 
 public:
+	//methods
+	void shoot(std::string gun);
+	bool move(int x, int y);
+	bool checkCollision(void);
 
 	Enemy(void);
-	Enemy(/* args */);
+	Enemy(std::string name);
 	Enemy(Enemy const & old);
-	Enemy(void);
 	~Enemy(void); // to be updated
 
 	Enemy			&operator=(Enemy const &old);
 
-	void			sampleFunction(void) const;
-
 private:
-	int		_hp;
-	int		_x;
-	int		_y;
-
-
+	void _initValue(void);
 };
 
 std::ostream	&operator<<(std::ostream &o, Enemy const &c);

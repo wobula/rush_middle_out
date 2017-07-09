@@ -11,6 +11,7 @@
 #include <ncurses.h>
 #include "Player.class.hpp"
 #include "Game.hpp"
+#include "Enemy.class.hpp"
 
 // METHODS //
 
@@ -36,15 +37,16 @@ bool Player::move(int x, int y)
 
 bool checkCollisionObject(char c)
 {
-	if (d == Enemy:_symbol)
+	if (c == Enemy::_symbol)
 	{
 		this->_lives--;
+		std::cout << "Player hit!" << std::endl;
 		return true;
 	}
 	return false;
 }
 
-bool Plauyer::checkCollision(void)
+bool Player::checkCollision(void)
 {
 	char d;
 	if (this->move() == 0)
