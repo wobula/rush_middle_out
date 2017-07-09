@@ -21,8 +21,22 @@ public:
   static int maxY;
   static int maxX;
   static bool debug;
+  GameEntity	*getEntityAt(int x, int y);
+  void			bulletsAct(void);
+  void			playerAct(void);
+  void			enemiesAct(void);
+  void			spawnEnemies(void);
+  void			cleanup(void);
+
  protected:
  private:
+
+ GameEntity		**_grid;
+ Enemy			*_enemies;
+ Bullet			*_bullets;
+ Environment	*_e;
+ Player			*_p;
+
 };
 
 
