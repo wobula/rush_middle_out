@@ -4,17 +4,16 @@
 # include <string>
 # include <iostream>
 
-class GameEntity
+class AGameEntity
 {
 public:
 
-  GameEntity(void);
+  AGameEntity(void);
   // GameEntity(std::string name);
-  GameEntity(GameEntity &src);
-  ~GameEntity(void);
-  void move(void);
-  void drawToWindow(int x, int y) const;
-  void getAlive(void) const;
+  AGameEntity(AGameEntity &src);
+  ~AGameEntity(void);
+  virtual void move(void) = 0;
+  virtual void drawToWindow(int x, int y) const = 0;
   
 protected:
   
