@@ -8,19 +8,15 @@ class AGameEntity
 {
 public:
 
-  AGameEntity(void);
-  // GameEntity(std::string name);
-  AGameEntity(AGameEntity &src);
-  ~AGameEntity(void);
   virtual void move(void) = 0;
   virtual void drawToWindow(int x, int y) const = 0;
   
 protected:
   
-  int _x;
-  int _y;
-  int _dirx;
-  int _diry;
+  int _posX;
+  int _posY;
+  int _dirX;
+  int _dirY;
   int _speed;
   char _symbol;
   int _lives;
