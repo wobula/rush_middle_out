@@ -6,6 +6,7 @@
 
 class AGameEntity
 {
+  
 public:
 
   virtual bool move(int x, int y);
@@ -29,5 +30,11 @@ protected:
 
 #endif
 
+// printf("%s", str);
+// scanf(""%s", str);
+
+// wprintw(x, y, "%s%s%s", str, strw);
+// wscanw(x, y "%c" c); 
 
 
+bool check();

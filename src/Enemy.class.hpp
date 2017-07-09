@@ -1,28 +1,28 @@
 #ifndef ENEMY_CLASS_HPP
 # define ENEMY_CLASS_HPP
 
+# include "GameEntity.class.hpp"
 # include <iostream>
 # include <string>
 
-class Enemy {
+class Enemy : public AGameEntity{
 
 public:
 
 	Enemy(void);
-	Enemy(/* args */);
+  //	Enemy(/* args */);
 	Enemy(Enemy const & old);
-	Enemy(void);
+  //	Enemy(void);
 	~Enemy(void); // to be updated
 
-	Enemy			&operator=(Enemy const &old);
+	Enemy &operator=(Enemy const &old);
 
-	void			sampleFunction(void) const;
-
+  bool move(int x, int y);
+  bool CheckCollisionObject(char c) const;
+  bool 
+  
 private:
-	int		_hp;
-	int		_x;
-	int		_y;
-
+  
 
 };
 

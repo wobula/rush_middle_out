@@ -34,17 +34,17 @@ bool Player::move(int x, int y)
 	return (true);
 }
 
-bool checkCollisionObject(char c)
+bool Player::checkCollisionObject(char c)
 {
-	if (d == Enemy:_symbol)
+	if (d == 'v')
 	{
-		this->_lives--;
+	  this->_lives--;
 		return true;
 	}
 	return false;
 }
 
-bool Plauyer::checkCollision(void)
+bool Player::checkCollision(void)
 {
 	char d;
 	if (this->move() == 0)
