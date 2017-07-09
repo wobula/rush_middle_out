@@ -29,7 +29,7 @@ OBJ_DIR		=	obj
 OBJ_FILE	=	$(SRC_FILE:.cpp=.o)
 OBJS		=	$(addprefix $(OBJ_DIR)/, $(OBJ_FILE))
 
-INC			=	-I inc
+INC			=	-I src
 
 .PHONY: re fclean clean all
 

@@ -9,7 +9,7 @@
 #ifndef PLAYER_HPP
 # define PLAYER_HPP
 
-class Player : public GameEntity 
+class Player : public AGameEntity
 {
 public:
 	//methods

@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+
 class Enemy {
 
 public:
@@ -14,13 +15,17 @@ public:
 	~Enemy(void); // to be updated
 
 	Enemy			&operator=(Enemy const &old);
-	std::ostream	&operator<<(std::ostream &o, Enemy const &c);
 
 	void			sampleFunction(void) const;
 
 private:
+	int		_hp;
+	int		_x;
+	int		_y;
 
 
 };
+
+std::ostream	&operator<<(std::ostream &o, Enemy const &c);
 
 #endif
