@@ -12,13 +12,12 @@ public:
 	Enemy(void);
   	Enemy(int x, int y);
 	Enemy(Enemy const & old);
-  //	Enemy(void);
 	~Enemy(void); // to be updated
 
 	Enemy &operator=(Enemy const &old);
 
-  //bool  move(void);
-  bool checkCollisionObject(char c) const;
+  bool  move(void);
+  bool checkCollisionObject(char c);
   bool checkCollision(void);
   void _initValue(void);
   void doAction(void);
@@ -28,7 +27,7 @@ private:
 
 };
 
-std::ostream	&operator<<(std::ostream &o, Enemy const &c);
+// std::ostream	&operator<<(std::ostream &o, Enemy const &c);
 
 #endif
 

@@ -4,13 +4,13 @@
 #include "Player.class.hpp"
 
 Enemy::Enemy(void) {
-	this->_initValue(void);
+	this->_initValue();
 	std::cout << "Enemy Default Constructor" << std::endl;
 	return;
 }
 
 Enemy::Enemy(int x, int y) {
-	this->_initValue(void);
+	this->_initValue();
 	this->_posX = x;
 	this->_posY = y;
 	std::cout << "Enemy Parametric Constructor" << std::endl;
@@ -40,15 +40,16 @@ Enemy				&Enemy::operator=(Enemy const &old)
 	std::cout << "Enemy Assignment Operator" << std::endl;
 	if (this == &old)
 	  return(*this);
+	return(*this);
 	// 	this->_privateF = old.getFoo();
 	// return *this;
 }
 
-std::ostream	&operator<<(std::ostream &o, Enemy const &c)
-{
-	o << "To String Function of Enemy: " << c.getFoo();
-	return (o);
-}
+// std::ostream	&operator<<(std::ostream &o, Enemy const &c)
+// {
+// 	o << "To String Function of Enemy: " << c.getFoo();
+// 	return (o);
+// }
 
 // METHODS //
 
@@ -57,7 +58,6 @@ std::ostream	&operator<<(std::ostream &o, Enemy const &c)
 // 	std::cout << "Shooting with " << gun << std::endl;
 // 	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 // }
-
 
 
 bool Enemy::move(void)
