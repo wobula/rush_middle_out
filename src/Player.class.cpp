@@ -35,7 +35,6 @@ bool Player::move(int key)
 	return (true);
 }
 
-<<<<<<< HEAD
 bool checkCollisionObject(char c)
 {
 	if (c == Enemy::_symbol)
@@ -64,8 +63,6 @@ bool Player::checkCollision(int x, int y)
 	return (hit);
 }
 
-=======
->>>>>>> 88b1bb567e7df2d7f52064fbae1d627236eb8243
 // OPERATOR OVERLOADS //
 
 Player & Player::operator=(Player const & rhs)
