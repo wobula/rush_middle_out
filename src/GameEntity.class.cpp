@@ -48,11 +48,16 @@ bool GameEntity::move(int x, int y)
   // if movement results in a collision return false and kill entity;
   if (this->_x + x >= maxX)
     {
-      mvwprintw(Game::_debugwin, x, y, "%s\n", "collision detected");
+      mvwprintw(stdscr, this->_x, this->_y, "%s\n", "collision detected");
       return (false);
     }
   else if (this->_y + y >= maxY)
     return (false);
+  else
+    {
+      this->_x += x;
+      this->_y += y;
+    }
   return(true);
 }
   
