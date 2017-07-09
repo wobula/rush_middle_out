@@ -1,3 +1,5 @@
+#ifndef GAME_HPP
+#define GAME_HPP
 class Game {
  public:
   static  int score, maxY, maxX;
@@ -20,3 +22,4 @@ class Game {
  protected:
  private:
 };
+#endif
