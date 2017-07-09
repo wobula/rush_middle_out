@@ -17,7 +17,7 @@ class Player : public AGameEntity
 public:
 	//methods
 	void shoot(std::string gun);
-	bool move(int x, int y);
+	bool move(int key);
 
 	//operator overloads
 	Player & operator=(Player const & rhs); //Canonical
@@ -26,6 +26,9 @@ public:
 	Player(Player const & src); //canonical
 	Player(void); //Canonical
 	~Player(void); //Canonical
+  bool checkCollisionObject(char c);
+  bool checkCollision(int x, int y);
+
 private:
 	void _initValue(void);
 };
