@@ -84,8 +84,9 @@ void Game::play()
 				ch = 0;
 		}
 }
-
+/*
 GameEntity		*Game::getEntityAt(int x, int y)
 {
 		return (this->grid[x][y]);
 }
+*/
