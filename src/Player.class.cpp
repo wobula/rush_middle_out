@@ -34,6 +34,34 @@ bool Player::move(int x, int y)
 	return (true);
 }
 
+bool checkCollisionObject(char c)
+{
+	if (d == Enemy:_symbol)
+	{
+		this->_lives--;
+		return true;
+	}
+	return false;
+}
+
+bool Plauyer::checkCollision(void)
+{
+	char d;
+	if (this->move() == 0)
+	{
+		if (mvscanw(this->_posY + 1, this->posX, "%c", d))
+			this->_lives--;
+		checkCollisionObject(d);
+		if (mvscanw(this->_posY, this->posX + 1, "%c", d))
+			this->_lives--;
+		checkCollisionObject(d);
+		if (mvscanw(this->_posY, this->posX - 1, "%c", d))
+			this->_lives--;
+		checkCollisionObject(d);
+	}
+
+}
+
 // OPERATOR OVERLOADS //
 
 Player & Player::operator=(Player const & rhs)
