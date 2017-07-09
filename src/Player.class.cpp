@@ -20,7 +20,7 @@ void Player::shoot(std::string gun)
 	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 }
 
-bool Player::move(int key)
+bool Player::mov e(int key)
 {
 	if (key == KEY_UP)
 		this->_posX = this->_posX + 1;

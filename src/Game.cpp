@@ -1,9 +1,9 @@
 #include "Game.hpp"
 #include <ncurses.h>
-#include "Enemy.class.hpp"
+//#include "Enemy.class.hpp"
 #include "Environment.hpp"
-#include "GameEntity.class.hpp"
-#include "Player.class.hpp"
+//#include "GameEntity.class.hpp"
+//#include "Player.class.hpp"
 
 int Game::score = 0;
 int Game::maxX = 0;
@@ -35,10 +35,9 @@ void Game::launch() {
 }
 
 void Game::play() {
-  Player kevin;
   Environment map;
   int ch = 0;
-  timeout(100);
+  timeout(300);
   while ((ch = getch()) != 'q') {
     map.starsRnd();
 

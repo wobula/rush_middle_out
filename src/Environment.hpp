@@ -11,7 +11,7 @@
 
 class   Environment
 {
-        char    stars[126];
+        //char    stars[256];
         public:
 
                 Environment( void );
@@ -20,7 +20,7 @@ class   Environment
                 ~Environment( void );
 
         private:
-                unsigned int _characters;
+        //                unsigned int _characters;
 };
 
 #endif

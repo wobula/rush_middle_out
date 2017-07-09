@@ -23,33 +23,31 @@ unsigned int    Environment::starShift(void)/* random number generator */
 }
 void    Environment::starsRnd( void )/* Displays the stars randomly in terminal*/
 {
-    Environment::stars[125] = '\0';
-    std::memset(Environment::stars, ' ', 125);
+    getmaxyx(stdscr, Game::maxY, Game::maxX);
     start_color();			/* Start color 			*/
-	    init_pair(1, COLOR_BLUE, COLOR_BLACK);
-        init_pair(2, COLOR_MAGENTA, COLOR_BLACK);
-        init_pair(3, COLOR_WHITE, COLOR_BLACK);
+    init_pair(1, COLOR_BLUE, COLOR_BLACK);
+    init_pair(2, COLOR_MAGENTA, COLOR_BLACK);
+    init_pair(3, COLOR_WHITE, COLOR_BLACK);
     if (colors)
     {
         attron(COLOR_PAIR(1));
-        Environment::stars[starShift() % 125] = '*';
+        mvaddch(0, (starShift() % Game::maxX), '*');
         colors = FALSE;
         movement++;
     }
     else
     {
-        Environment::stars[starShift() % 125] = '.';
         attron(COLOR_PAIR(2));
+        mvaddch(0, (starShift() % Game::maxX), '.');
         colors = TRUE;
         movement++;
     }
     if (movement == 10)
     {
-        Environment::stars[starShift() % 125] = 'O';
         attron(COLOR_PAIR(3));
+        mvaddch(0, (starShift() % Game::maxX), 'O');
         movement = 0;
     }
-    mvprintw(0, 0, Environment::stars);
     attroff(COLOR_PAIR(1));
     attroff(COLOR_PAIR(2));
     scrollok(stdscr, TRUE);
