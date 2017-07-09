@@ -4,8 +4,10 @@
 bool AGameEntity::move(int x, int y)
 {
   char pos;
-
+  std::string fmt = "%c";
+  
   pos = 'p';
+  
   // if movement results in a collision return false and kill entity;
   if (this->_posX + x >= Game::maxX)
     {
@@ -22,8 +24,11 @@ bool AGameEntity::move(int x, int y)
     {
       this->_posX += x;
       this->_posY += y;
-      // mvscanw(this->_posY, this->_posX, "%c" ,this->pos);
-      //if (pos == '<')
+      mvscanw(this->_posY, this->_posX, fmt.c_str() ,this->pos);
+      if (pos == 'X')
+	{
+	  this->_lives--;
+	}
       //Collision check here
       this->drawToWindow();
     }
@@ -45,5 +50,11 @@ bool AGameEntity::getAlive(void) const
 {
   return (this->_isAlive);
 }
+
+// bool AGameEntiity::checkCollision(void)
+// {
+  
+//   return (true);
+// }
 
 

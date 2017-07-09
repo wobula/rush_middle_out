@@ -9,7 +9,7 @@ class AGameEntity
   
 public:
 
-  virtual bool move(int x, int y);
+  bool move(int x, int y);
   virtual bool getAlive(void) const;
   virtual void drawToWindow(void) const;
     
@@ -37,4 +37,3 @@ protected:
 // wscanw(x, y "%c" c); 
 
 
-bool check();
