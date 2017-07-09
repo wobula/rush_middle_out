@@ -12,17 +12,17 @@ GameEntity::GameEntity(void)
   this->_isAlive = true;
 }
 
-GameEntity::GameEntity(std::string name)
-{
-  this->_x = 0;
-  this->_y = 0;
-  this->_speed = 1;
-  this->_dirx = 1;
-  this->_diry = 1;  
-  this->_symbol = '#';
-  this->_lives = 1;
-  this->_isAlive = true;
-}
+// GameEntity::GameEntity(std::string name)
+// {
+//   this->_x = 0;
+//   this->_y = 0;
+//   this->_speed = 1;
+//   this->_dirx = 1;
+//   this->_diry = 1;  
+//   this->_symbol = '#';
+//   this->_lives = 1;
+//   this->_isAlive = true;
+// }
 
 GameEntity::GameEntity(GameEntity &src)
 {
@@ -48,11 +48,16 @@ bool GameEntity::move(int x, int y)
   // if movement results in a collision return false and kill entity;
   if (this->_x + x >= maxX)
     {
-      mvwprintw(Game::_debugwin, x, y, "%s\n", "collision detected");
+      mvwprintw(stdscr, this->_x, this->_y, "%s\n", "collision detected");
       return (false);
     }
   else if (this->_y + y >= maxY)
     return (false);
+  else
+    {
+      this->_x += x;
+      this->_y += y;
+    }
   return(true);
 }
   

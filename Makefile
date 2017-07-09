@@ -12,7 +12,7 @@
 
 NAME		=	ft_retro
 
-CXX			=	g++
+CXX			=	clang++
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 SRC_DIR		=	src
