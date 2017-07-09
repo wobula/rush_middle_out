@@ -9,9 +9,10 @@ Enemy::Enemy(void) {
 	return;
 }
 
-Enemy::Enemy(std::string name) {
+Enemy::Enemy(int x, int y) {
 	this->_initValue(void);
-	this->_name = name;
+	this->_posX = x;
+	this->_posY = y;
 	std::cout << "Enemy Parametric Constructor" << std::endl;
 	return;
 }
@@ -29,17 +30,18 @@ Enemy::~Enemy(void) {
 	return;
 }
 
-void			Enemy::sampleFunction(void) const
-{
-	std::cout << "Enemy Sample Function" << std::endl
-}
+// void			Enemy::sampleFunction(void) const
+// {
+// 	std::cout << "Enemy Sample Function" << std::endl
+// }
 
 Enemy				&Enemy::operator=(Enemy const &old)
 {
 	std::cout << "Enemy Assignment Operator" << std::endl;
-	if (this != &old)
-		this->_privateFoo = old.getFoo();
-	return *this;
+	if (this == &old)
+	  return(*this);
+	// 	this->_privateF = old.getFoo();
+	// return *this;
 }
 
 std::ostream	&operator<<(std::ostream &o, Enemy const &c)
