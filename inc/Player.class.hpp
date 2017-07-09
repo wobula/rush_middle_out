@@ -13,6 +13,8 @@ class Player : public GameEntity
 {
 public:
 	//methods
+	void shoot(std::string gun);
+	bool move(int x, int y);
 
 	//operator overloads
 	Player & operator=(Player const & rhs); //Canonical
