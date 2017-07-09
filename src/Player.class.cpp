@@ -22,6 +22,9 @@ void Player::shoot(std::string gun)
 
 bool Player::move(int key)
 {
+  int prevX = this->_posX;
+  int prevy = this->_posY;
+
 	if (key == KEY_UP)
 		this->_posX = this->_posX + 1;
 	if (key == KEY_DOWN)
@@ -30,8 +33,13 @@ bool Player::move(int key)
 		this->_posY = this->_posY + 1;
 	if (key == KEY_RIGHT)
 		this->_posY = this->_posY - 1;
-	if (!checkCollision(this->_posX, this->_posY))
+	if (checkCollision(this->_posX, this->_posY))
 	  return(false);
+	if (prevX == this->_posX && prevy == this->_posY)
+	  {
+	    if (checkCollision(this->_posX, this->_posY + 1))
+	      return (false);
+	  }
 	return (true);
 }
 
