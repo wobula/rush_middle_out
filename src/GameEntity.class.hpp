@@ -13,7 +13,7 @@ public:
   virtual void drawToWindow(void) const;
     
 protected:
-  std::string name;
+  std::string _name;
   int _posX;
   int _posY;
   int _dirX;
