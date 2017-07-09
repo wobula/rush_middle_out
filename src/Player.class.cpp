@@ -80,11 +80,12 @@ Player & Player::operator=(Player const & rhs)
 
 // CONSTRUCTORS //
 
-Player::Player(std::string name)
+Player::Player(int startX, int startY)
 {
 	std::srand(std::time(NULL));
 	this->_initValue();
-	this->_name = name;
+	this->_posX = startX;
+	this->_posY = startY;
 	if (Game::debug)
 	{
 		std::cout << "Player " << this->_name

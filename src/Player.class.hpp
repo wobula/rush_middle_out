@@ -22,7 +22,7 @@ public:
 	//operator overloads
 	Player & operator=(Player const & rhs); //Canonical
 
-	Player(std::string name); //Canonical
+	Player(int startX, int startY); //Canonical
 	Player(Player const & src); //canonical
 	Player(void); //Canonical
 	~Player(void); //Canonical
