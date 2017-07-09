@@ -21,17 +21,18 @@ void Player::shoot(std::string gun)
 	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 }
 
-bool Player::move(int x, int y)
+bool Player::move(int key)
 {
-	std::cout << "Moving to " << x << ", " << y << std::endl;
-	if (KEY_UP)
+	if (key == KEY_UP)
 		this->_posX = this->_posX + 1;
-	if (KEY_DOWN)
+	if (key == KEY_DOWN)
 		this->_posX = this->_posX -1;
-	if (KEY_LEFT)
+	if (key == KEY_LEFT)
 		this->_posY = this->_posY + 1;
-	if (KEY_RIGHT)
+	if (key == KEY_RIGHT)
 		this->_posY = this->_posY - 1;
+	if x == 0 && y == 0
+		return (false);
 	return (true);
 }
 
@@ -46,22 +47,21 @@ bool checkCollisionObject(char c)
 	return false;
 }
 
-bool Player::checkCollision(void)
+//Params same x and y as movement
+
+bool Player::checkCollision(int x, int y)
 {
-	char d;
-	if (this->move() == 0)
+	bool hit = false;
+	char *d;
+	if (!this->move(x, y))
 	{
 		if (mvscanw(this->_posY + 1, this->posX, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
-		if (mvscanw(this->_posY, this->posX + 1, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
-		if (mvscanw(this->_posY, this->posX - 1, "%c", d))
-			this->_lives--;
-		checkCollisionObject(d);
+			hit = checkCollisionObject(d);
 	}
-
+	else
+		if (mvscanw(this->_posY + y, this->posX + x, "%c", d))
+			hit = checkCollisionObject(d);
+	return (hit);
 }
 
 // OPERATOR OVERLOADS //
