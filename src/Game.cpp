@@ -45,30 +45,30 @@ void Game::play()
 		timeout(50);
 		while ((ch = getch()) != 'q')
 		{
-	
 				// every X cycles, spawn a new enemy at a random position on the spawn wall.
 				this.spawnEnemies();
 
-				// This Game will have an array of bullets. 
-				// This function just needs to loop through the array and move each bullet once,
-				// check for collisions and change is_alive as needed
-				this.bulletsAct();
+				// // This Game will have an array of bullets.
+				// // This function just needs to loop through the array and move each bullet once,
+				// // check for collisions and change is_alive as needed
+				// this.bulletsAct();
 
-				// Do what for and mean to be. Fire lasers, do some damage! Move the player!
-				this.playerAct(ch);
+				// // Do what for and mean to be. Fire lasers, do some damage! Move the player!
+				// this.playerAct(ch);
 
-				// Loop through the array of Enemies and have them move, shoot, etc.
-				this.enemiesAct();
+				// // Loop through the array of Enemies and have them move, shoot, etc.
+				// this.enemiesAct();
 
+				//this.doStarStuff();
 
-	
-				this.doStarStuff();
+				//this.drawEverything();
+				
+				// // every X cycles, spawn a new enemy at a random position on the spawn wall.
+				// this.spawnEnemies();
 
-				this.drawEverything();
-
-				// loop through all enemies, bullets, and players, and remove all entities with 
-				// is_alive == false;
-				this.cleanup();
+				// // loop through all enemies, bullets, and players, and remove all entities with
+				// // is_alive == false;
+				// this.cleanup();
 
 
 
