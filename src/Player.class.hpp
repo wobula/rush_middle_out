@@ -9,7 +9,10 @@
 #ifndef PLAYER_HPP
 # define PLAYER_HPP
 
-class Player : public GameEntity 
+#include "GameEntity.class.hpp"
+#include "Game.hpp"
+
+class Player : public AGameEntity
 {
 public:
 	//methods
@@ -25,6 +28,6 @@ public:
 	~Player(void); //Canonical
 private:
 	void _initValue(void);
-}
+};
 
 #endif
