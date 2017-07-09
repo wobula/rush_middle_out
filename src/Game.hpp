@@ -1,9 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 class Game {
- public:
-  static  int score, maxY, maxX;
-  static bool debug;
+public:
   //! Default constructor
   Game();
 
@@ -19,7 +17,13 @@ class Game {
   void launch();
   void play();
 
+  static  int score;
+  static int maxY;
+  static int maxX;
+  static bool debug;
  protected:
  private:
 };
+
+
 #endif

@@ -1,13 +1,13 @@
 #include "Game.hpp"
 #include <ncurses.h>
 
-int score, maxY, maxX;
+int Game::score = 0;
+int Game::maxX = 0;
+int Game::maxY = 0;
+bool Game::debug = false;
+
 Game::Game()
 {
-		score = 0;
-		maxX = 0;
-		maxY = 0;
-		debug = false;
 };
 
 Game::Game(const Game &other)
@@ -67,9 +67,10 @@ void Game::play()
 
 				if (ch == 'D')
 						debug = true;
-				if (ch != ERR)
+				//if (ch != ERR)
 						addch(ch);
 				refresh();
 				ch = 0;
 		}
 };
+
