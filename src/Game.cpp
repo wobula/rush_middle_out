@@ -7,6 +7,7 @@ Game::Game()
   score = 0;
   maxX = 0;
   maxY = 0;
+  debug = false;
 };
 
 Game::Game(const Game &other)
@@ -44,6 +45,8 @@ void Game::play()
   timeout(50);
   while ((ch = getch()) != 'q')
     {
+      if (ch == 'D')
+        debug = true;
       if (ch != ERR)
         addch(ch);
       refresh();
