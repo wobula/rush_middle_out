@@ -1,7 +1,7 @@
 class Game {
  public:
-  int score, maxY, maxX;
-  bool debug;
+  static  int score, maxY, maxX;
+  static bool debug;
   //! Default constructor
   Game();
 
