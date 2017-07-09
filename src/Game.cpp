@@ -38,6 +38,7 @@ void Game::play() {
   Environment map;
   int ch = 0;
   timeout(300);
+  box(stdscr, '|', '_');
   while ((ch = getch()) != 'q') {
     map.starsRnd();
 
