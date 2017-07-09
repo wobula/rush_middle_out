@@ -18,7 +18,6 @@ public:
 	//methods
 	void shoot(std::string gun);
 	bool move(int x, int y);
-	bool checkCollision(void);
 
 	//operator overloads
 	Player & operator=(Player const & rhs); //Canonical

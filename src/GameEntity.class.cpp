@@ -33,6 +33,10 @@ bool AGameEntity::move(int x, int y)
 
 void AGameEntity::drawToWindow(void) const
 {
+  if (this->_isAlive == false)
+    {
+      return ;
+    }
   mvprintw(this->_posX, this->_posY, "%c", this->_symbol);  // Draw this->AGameEntity at it's x and y after it has moved or not
   refresh();
 }
@@ -41,4 +45,5 @@ bool AGameEntity::getAlive(void) const
 {
   return (this->_isAlive);
 }
+
 
