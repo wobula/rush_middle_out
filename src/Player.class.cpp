@@ -6,8 +6,6 @@
  * Author: Sesl, Irhett, Tiny, Bemillie, Searsie
  * ==========================================================================*/
 
-//x, y, dirx, diry, speed, symbol, hp, isalive
-
 #include <iostream>
 #include <string>
 #include <curses.h>
@@ -17,27 +15,27 @@
 
 void Player::shoot(std::string gun)
 {
-	Missile::_instantiate(this->_x + 1, this->_y + 1);
+	Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 }
 
 bool Player::move(int x, int y)
 {
 	if (KEY_UP)
-		this->_x = this->_x + 1;
+		this->_posX = this->_posX + 1;
 	if (KEY_DOWN)
-		this->_x = this->_x -1;
+		this->_posX = this->_posX -1;
 	if (KEY_LEFT)
-		this->_y = this->_y + 1;
+		this->_posY = this->_posY + 1;
 	if (KEY_RIGHT)
-		this->_y this->_y - 1;
+		this->_posY this->_posY - 1;
 }
 
 // OPERATOR OVERLOADS //
 
 Player & Player::operator=(Player const & rhs)
 {
-	this->_x = rhs._x;
-	this->_y = rhs._y;
+	this->_posX = rhs._posX;
+	this->_posY = rhs._posY;
 	this->_dirx = rhs._dirx;
 	this->_diry = rhs._diry;
 	this->_speed = rhs._speed;
@@ -95,7 +93,7 @@ Player::~Player(void)
 void _initValue(void)
 {
 	this->_name = "PlayerOne";
-	this->_x = 0;
+	this->_posX = 0;
 	this->y = 0;
 	this->_dirx = 1;
 	this->diry = 1;
