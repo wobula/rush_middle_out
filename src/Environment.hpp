@@ -11,11 +11,12 @@
 
 class   Environment
 {
-        char    stars[81];
+        char    stars[126];
         public:
 
                 Environment( void );
                 void    starsRnd( void );
+                unsigned int    starShift(void);
                 ~Environment( void );
 
         private:
