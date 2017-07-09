@@ -1,9 +1,8 @@
+//#include "GameEntity.class.hpp"
 #ifndef GAME_HPP
 #define GAME_HPP
 class Game {
- public:
-  static  int score, maxY, maxX;
-  static bool debug;
+public:
   //! Default constructor
   Game();
 
@@ -19,7 +18,11 @@ class Game {
   void launch();
   void play();
 
-  GameEntity	*getEntityAt(int x, int y);
+  static  int score;
+  static int maxY;
+  static int maxX;
+  static bool debug;
+  //GameEntity	*getEntityAt(int x, int y);
   void			bulletsAct(void);
   void			playerAct(void);
   void			enemiesAct(void);
@@ -29,11 +32,13 @@ class Game {
  protected:
  private:
 
- GameEntity		**_grid;
- Enemy			*_enemies;
- Bullet			*_bullets;
- Environment	*_e;
- Player			*_p;
+ // GameEntity		**_grid;
+ // Enemy			*_enemies;
+ // Bullet			*_bullets;
+ // Environment	*_e;
+ // Player			*_p;
 
 };
+
+
 #endif
