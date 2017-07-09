@@ -48,15 +48,21 @@ bool GameEntity::move(int x, int y)
   // if movement results in a collision return false and kill entity;
   if (this->_x + x >= maxX)
     {
-      mvwprintw(stdscr, this->_x, this->_y, "%s\n", "collision detected");
+      mvprintw(this->_x, this->_y, "%c", 'X');
       return (false);
     }
   else if (this->_y + y >= maxY)
-    return (false);
+    {
+      mvprintw(this->_x, this->_y, "%c", 'X');
+      return (false);
+    }
+  else if
+    ;
   else
     {
       this->_x += x;
       this->_y += y;
+      this->drawToWindow(this->x, this->y);
     }
   return(true);
 }
@@ -64,7 +70,8 @@ bool GameEntity::move(int x, int y)
 
 void GameEntity::drawToWindow(int x, int y) const
 {
-  // Draw this->GameEntity at it's x and y after it has moved or not
+  mvprintw(this->_x, this->_y, "%c", this->_symbol);  // Draw this->GameEntity at it's x and y after it has moved or not
+  refresh()
 }
 
 void GameEntity::getAlive(void) const
