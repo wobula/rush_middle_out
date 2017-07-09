@@ -1,92 +1,85 @@
 #include "Game.hpp"
 #include <ncurses.h>
+#include "Enemy.class.hpp"
+#include "Environment.hpp"
+#include "GameEntity.class.hpp"
+#include "Player.class.hpp"
 
 int Game::score = 0;
 int Game::maxX = 0;
 int Game::maxY = 0;
 bool Game::debug = false;
 
-Game::Game()
-{
+Game::Game() {}
+
+Game::Game(const Game &other) { *this = other; }
+
+Game::~Game() {}
+
+Game &Game::operator=(const Game &rhs) {
+  // Check for self-assignment!
+  if (this == &rhs) return *this;
+
+  return *this;
 }
 
-Game::Game(const Game &other)
-{
-		*this = other;
+void Game::launch() {
+  initscr();
+  cbreak();
+  noecho();
+  keypad(stdscr, TRUE);
+  getmaxyx(stdscr, maxY, maxX);
+  printw("window size id %d tall and %d wide", maxY, maxX);
+  play();
+  endwin();
 }
 
-Game::~Game()
-{
-}
+void Game::play() {
+  Player kevin;
+  Environment map;
+  int ch = 0;
+  timeout(100);
+  while ((ch = getch()) != 'q') {
+    map.starsRnd();
 
-Game& Game::operator=(const Game &rhs)
-{
-		// Check for self-assignment!
-		if (this == &rhs)
-				return *this;
+    // every X cycles, spawn a new enemy at a random position on the spawn wall.
+    // this.spawnEnemies();
 
-		return *this;
-}
+    // // This Game will have an array of bullets.
+    // // This function just needs to loop through the array and move each
+    // bullet once,
+    // // check for collisions and change is_alive as needed
+    // this.bulletsAct();
 
-void Game::launch()
-{
-		initscr();
-		cbreak();
-		noecho();
-		keypad(stdscr, TRUE);
-		getmaxyx(stdscr, maxY, maxX);
-		printw("window size id %d tall and %d wide", maxY, maxX);
-		play();
-		endwin();
-}
+    // // Do what for and mean to be. Fire lasers, do some damage! Move the
+    // player!
+    // this.playerAct(ch);
 
-void Game::play()
-{
-		int ch = 0;
-		timeout(100);
-		while ((ch = getch()) != 'q')
-		{
-			Environment	map;
-				// every X cycles, spawn a new enemy at a random position on the spawn wall.
-				//this.spawnEnemies();
+    // // Loop through the array of Enemies and have them move, shoot, etc.
+    // this.enemiesAct();
 
-				// // This Game will have an array of bullets.
-				// // This function just needs to loop through the array and move each bullet once,
-				// // check for collisions and change is_alive as needed
-				// this.bulletsAct();
+    // this.doStarStuff();
 
-				// // Do what for and mean to be. Fire lasers, do some damage! Move the player!
-				// this.playerAct(ch);
+    // this.drawEverything();
 
-				// // Loop through the array of Enemies and have them move, shoot, etc.
-				// this.enemiesAct();
+    // // every X cycles, spawn a new enemy at a random position on the spawn
+    // wall.
+    // this.spawnEnemies();
 
-				//this.doStarStuff();
+    // // loop through all enemies, bullets, and players, and remove all
+    // entities with
+    // // is_alive == false;
+    // this.cleanup();
 
-				//this.drawEverything();
-
-				// // every X cycles, spawn a new enemy at a random position on the spawn wall.
-				// this.spawnEnemies();
-
-				// // loop through all enemies, bullets, and players, and remove all entities with
-				// // is_alive == false;
-				// this.cleanup();
-
-
-
-
-
-				if (ch == 'D')
-						debug = true;
-				if (ch != ERR)
-						addch(ch);
-				refresh();
-				ch = 0;
-		}
+    if (ch == 'D') debug = true;
+    if (ch != ERR) addch(ch);
+    refresh();
+    ch = 0;
+  }
 }
 /*
 GameEntity		*Game::getEntityAt(int x, int y)
 {
-		return (this->grid[x][y]);
+                return (this->grid[x][y]);
 }
 */
