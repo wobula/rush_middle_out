@@ -16,11 +16,13 @@
 
 void Player::shoot(std::string gun)
 {
-	Missile::_instantiate(this->_posX + 1, this->_posY + 1);
+	std::cout << "Shooting with " << gun << std::endl;
+	//Missile::_instantiate(this->_posX + 1, this->_posY + 1);
 }
 
 bool Player::move(int x, int y)
 {
+	std::cout << "Moving to " << x << ", " << y << std::endl;
 	if (KEY_UP)
 		this->_posX = this->_posX + 1;
 	if (KEY_DOWN)
@@ -29,6 +31,7 @@ bool Player::move(int x, int y)
 		this->_posY = this->_posY + 1;
 	if (KEY_RIGHT)
 		this->_posY = this->_posY - 1;
+	return (true);
 }
 
 // OPERATOR OVERLOADS //
