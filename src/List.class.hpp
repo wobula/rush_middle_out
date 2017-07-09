@@ -6,7 +6,7 @@
 /*   By: dubious </var/mail/dubious>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 20:04:52 by dubious           #+#    #+#             */
-/*   Updated: 2017/07/08 22:19:12 by dubious          ###   ########.fr       */
+/*   Updated: 2017/07/09 01:05:42 by dubious          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 
 	bool	isEmpty(void) const;
 	Entity	*getEnt(void) const;
+
+	List	*next;
 
 private:
 	bool	_empty;
