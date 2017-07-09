@@ -32,11 +32,11 @@ public:
  protected:
  private:
 
- // GameEntity		**_grid;
- // Enemy			*_enemies;
- // Bullet			*_bullets;
- // Environment	*_e;
- // Player			*_p;
+ GameEntity		**_grid;
+ List			*_enemies;
+ List			*_bullets;
+ //Environment	*_e;
+ Player			*_p;
 
 };
 
